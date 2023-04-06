@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const verifyToken = require("./middleware/auth");
