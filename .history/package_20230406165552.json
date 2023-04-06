@@ -6,7 +6,7 @@
   "scripts": {
     "startServer": "node server.js",
     "startAuth": "node authServer.js",
-    "start": "concurrently \"npm run startServer\" \"npm run startAuth\""
+    "start": "node server.js && node authServer.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,8 @@
     "json-server": "^0.17.0",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.16",
-    "npm": "^9.6.3"
+    "npm": "^9.6.3",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "concurrently": "^8.0.1"
