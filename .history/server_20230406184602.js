@@ -11,7 +11,7 @@ const cors = require("cors");
 app.use(cors());
 // app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
 const PORT = 3009;
-app.get("/api/rentals", (req, res) => {
+app.get("/api/rentals", verifyToken, (req, res) => {
   res.json(database.rentals);
 });
 

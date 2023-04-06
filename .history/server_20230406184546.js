@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const fs = require("fs");
 const verifyToken = require("./middleware/auth");
@@ -11,8 +11,8 @@ const cors = require("cors");
 app.use(cors());
 // app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
 const PORT = 3009;
-app.get("/api/rentals", (req, res) => {
-  res.json(database.rentals);
+app.get("/api/campaigns", verifyToken, (req, res) => {
+  res.json(database.campaigns);
 });
 
 app.listen(PORT, () => console.log("Server started on port" + PORT));
