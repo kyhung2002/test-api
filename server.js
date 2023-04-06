@@ -9,13 +9,15 @@ const app = express();
 app.use(express.json());
 const cors = require("cors");
 app.use(cors());
-// app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
+app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
 
 // app.get("/api/rentals", verifyToken, (req, res) => {
 //   res.json(database.rentals);
 // });
 
-app.get("/api/rentals", (req, res) => {
-  res.json(database.rentals);
-});
+// app.get("/api/rentals", (req, res) => {
+//   res.json(database.rentals);
+// });
+
+
 app.listen(4001, () => console.log("Server started on port 4001"));
