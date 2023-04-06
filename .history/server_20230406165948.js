@@ -15,7 +15,4 @@ app.use(cors());
 //   res.json(database.rentals);
 // });
 
-app.get("/api/rentals", (req, res) => {
-  res.json(database.rentals);
-});
 app.listen(4001, () => console.log("Server started on port 4001"));

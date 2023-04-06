@@ -6,7 +6,7 @@
   "scripts": {
     "startServer": "node server.js",
     "startAuth": "node authServer.js",
-    "start": "node server.js && node authServer.js"
+    "start": "node server.js && authServer.js"
   },
   "keywords": [],
   "author": "",
