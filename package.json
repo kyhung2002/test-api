@@ -7,7 +7,7 @@
     "startServer": "node server.js",
     "startAuth": "node authServer.js",
     "startAdd": "node index.js",
-    "start": "node server.js"
+    "start": "concurrently \"npm run startServer\" \"npm run startAuth\""
   },
   "keywords": [],
   "author": "",
