@@ -6,7 +6,9 @@ let rawdata = fs.readFileSync("db.json");
 let database = JSON.parse(rawdata);
 const jsonServer = require("json-server");
 const app = express();
+let users = database.users;
 app.use(express.json());
+const bcrypt = require("bcrypt");
 const cors = require("cors");
 app.use(cors());
 app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
@@ -69,7 +71,7 @@ app.post("/auth/login", (req, res) => {
     const tokens = generateTokens(user);
 
     updateRefreshToken(user.name, tokens.refreshToken);
-   return res.json(tokens);
+    return res.json(tokens);
   });
 });
 
@@ -111,7 +113,7 @@ app.post("/auth/register", (req, res) => {
       refreshToken: null,
       permissions,
     });
-    fs.writeFileSync("../db.json", JSON.stringify({ ...database, users }));
+    fs.writeFileSync("db.json", JSON.stringify({ ...database, users }));
     return res.sendStatus(201);
   });
 });
