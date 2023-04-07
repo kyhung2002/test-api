@@ -11,6 +11,7 @@ let users = database.users;
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 app.use(cors());
+
 const generateTokens = (payload) => {
   const { id, name } = payload;
   const accessToken = jwt.sign({ id, name }, process.env.ACCESS_TOKEN_SECRET, {
@@ -107,8 +108,8 @@ app.post("/auth/register", (req, res) => {
       refreshToken: null,
       permissions,
     });
-    fs.writeFileSync("db.json", JSON.stringify({ ...database, users }));
-    res.sendStatus(201);
+    fs.writeFileSync("../db.json", JSON.stringify({ ...database, users }));
+    return res.sendStatus(201);
   });
 });
 

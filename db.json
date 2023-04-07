@@ -1,5 +1,12 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "password": "$2b$10$X.GBAM.HmLXlTJgV0dt3veWCoiBn/rUZJ5kYjUQUse.9vwNfpX9VK",
+      "email": "trankyhung2221325a@gmail.com",
+      "refreshToken": null
+    }
+  ],
   "categories": [],
   "rentals": [],
   "posts": [],
